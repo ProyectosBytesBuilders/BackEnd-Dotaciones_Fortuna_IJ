@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Rest Api para Dotaciones Fortuna IJ",
+  "keywords": [
+    "node",
+    "express",
+    "multer",
+    "mongoose",
+    "bcrypt",
+    "jwt"
+  ],
+  "license": "ISC",
+  "author": "BytesBuilders404 <BytesBuilder404@gmail.com>",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
