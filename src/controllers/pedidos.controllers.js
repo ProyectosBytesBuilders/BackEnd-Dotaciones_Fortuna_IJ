@@ -1,3 +1,5 @@
+// Controlador de fine quien hace una accion especifica
+
 const createPedido = (req, res) => {
     res.json({ msg: 'Registra pedido' });
 }
