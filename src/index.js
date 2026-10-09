@@ -1,36 +1,17 @@
 //const express = require('express'); //comonJS
 import express from 'express'; // ES modul
 
+import pedidosrouter from './routes/pedidos.routes.js';
+
 const app = express();
 
+//Definiendo 1 EndPoint (ruta de entrada)
 app.get('/health', (req, res) => {
     res.json({ msg: 'Servidor de Dotaciones Fortuna IJ Funcionando!' });
 });
 
-//Obtener Todos Los Pedidos
-app.get('/pedidos', (req, res) => {
-    res.json({ msg: 'Lista todos los pedidos' });
-});
-
-//Crear Un Pedido
-app.post('/pedidos', (req, res) => {
-    res.json({msg: 'Registra pedido' });
-});
-
-//Actualizar Totalmente
-app.put('/pedidos', (req, res) => {
-    res.json({ msg: 'Actualizar todos las propiedades de un pedido'});
-});
-
-//Actualizar Parcialmente
-app.patch('/pedidos', (req, res) => {
-    res.json({ msg: 'Actualizar una o mas propiedades de un pedido'});
-});
-
-//Eliminar un usuario
-app.delete('/pedidos', (req, res) => {
-    res.json({ msg: 'Elimina un usuario'});
-});
+//Enlazar todas las rutas de la aplicacion
+app.use( '/api/pedidos', pedidosrouter );
 
 // Iniciar el servidor
 const port = 3000;
