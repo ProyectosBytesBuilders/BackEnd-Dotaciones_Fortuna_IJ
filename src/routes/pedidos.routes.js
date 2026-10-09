@@ -1,29 +1,18 @@
 import { Router } from 'express';
+import { createPedido, deletePedido, obtainPedidos, updatefullPedido, updatePedido } from '../controllers/pedidos.controllers.js';
 
 const router = Router();
 
 // Definicion de las rutas para pedidos
 
-router.get('/', (req, res ) => {
-    res.json({ msg: 'Obtiene todos los pedidos'});
+router.get('/', obtainPedidos );
 
-});
-router.post('/', (req, res ) => {
-    res.json({ msg: 'Registra los pedidos'});
+router.post('/', createPedido );
 
-});
-router.put('/', (req, res ) => {
-    res.json({ msg: 'Actualizar todos las propiedades de un pedido'});
+router.put('/', updatefullPedido );
 
-});
-router.patch('/', (req, res ) => {
-    res.json({ msg: 'Actualizar una o mas propiedades de un pedido'});
+router.patch('/', updatePedido );
 
-});
-router.delete('/', (req, res ) => {
-    res.json({ msg: 'Elimina un pedido'});
-
-});
-
+router.delete('/', deletePedido );
 
 export default router;
