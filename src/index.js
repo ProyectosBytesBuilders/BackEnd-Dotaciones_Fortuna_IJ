@@ -1,9 +1,14 @@
 //const express = require('express'); //comonJS
 import express from 'express'; // ES modul
 
+import conexion from './config/mongo.config.js';
 import pedidosrouter from './routes/pedidos.routes.js';
 
 const app = express();
+
+conexion();
+
+app.use(express.json()); //middleware para que el servidor pueda recibir y enviar datos en formato JSON
 
 //Definiendo 1 EndPoint (ruta de entrada)
 app.get('/health', (req, res) => {

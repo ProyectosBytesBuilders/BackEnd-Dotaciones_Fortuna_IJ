@@ -1,7 +1,13 @@
+import { dbCreatePedido } from "../services/pedidos.services.js";
+
 // Controlador de fine quien hace una accion especifica
 
-const createPedido = (req, res) => {
-    res.json({ msg: 'Registra pedido' });
+const createPedido = async (req, res) => {
+    const Pedido = req.body;
+
+    const newPedido = await dbCreatePedido(Pedido);
+
+    res.json({ msg: 'Registra pedido', pedido: newPedido });
 }
 
 const obtainPedidos = (req, res) => {
