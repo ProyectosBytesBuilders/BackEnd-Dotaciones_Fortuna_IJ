@@ -3,6 +3,7 @@ import express from 'express'; // ES modul
 
 import conexion from './config/mongo.config.js';
 import pedidosrouter from './routes/pedidos.routes.js';
+import categoriasRoute from './routes/categorias.routes.js'
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.get('/health', (req, res) => {
 
 //Enlazar todas las rutas de la aplicacion
 app.use( '/api/pedidos', pedidosrouter );
+app.use( '/api/categorias', categoriasRoute );
 
 // Iniciar el servidor
 const port = 3000;

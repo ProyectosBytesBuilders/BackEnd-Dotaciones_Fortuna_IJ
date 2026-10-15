@@ -3,11 +3,20 @@ import { dbCreatePedido } from "../services/pedidos.services.js";
 // Controlador de fine quien hace una accion especifica
 
 const createPedido = async (req, res) => {
+
+    try {
+    // Obtenemos el pedido del body de la request
     const Pedido = req.body;
 
     const newPedido = await dbCreatePedido(Pedido);
 
     res.json({ msg: 'Registra pedido', pedido: newPedido });
+        }
+        catch (error) {
+            console.error(error);
+            res.json({ msg: 'Error al registrar pedido' });
+    }
+
 }
 
 const obtainPedidos = (req, res) => {
