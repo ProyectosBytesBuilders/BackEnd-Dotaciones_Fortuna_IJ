@@ -9,10 +9,18 @@ const CategorySchema = new Schema(
             unique: true,
             minlength: 5,
         },
-        descripcion: String
+        descripcion: String,
+        status: {
+            type: Boolean,
+            default: true
+        }
     },
     //Configuraciones de la estructura de datos
-    {}
+    {
+        timestamps: true,
+        versionKey: false
+
+    }
 );
 
 // Definir el model a partir de la estructura del documento

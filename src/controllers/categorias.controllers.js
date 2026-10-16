@@ -1,4 +1,4 @@
-import { dbCreateCategory } from "../services/categorias.services.js";
+import { dbCreateCategory, dbGetCategorias } from "../services/categorias.services.js";
 
 const createCategory = async ( req, res ) => {
 
@@ -18,6 +18,18 @@ const createCategory = async ( req, res ) => {
     }
 
 }
+
+const getCategorias = async ( req, res) => {
+    const data = await dbGetCategorias();
+
+    res.json({
+        msg: 'Lista de Categorias',
+        data: data
+    });
+
+}
+
 export {
-    createCategory
+    createCategory,
+    getCategorias
 }
