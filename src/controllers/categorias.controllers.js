@@ -77,7 +77,7 @@ const getCategory = async (req, res) => {
 
 
     try {
-        const id = re1.params.id;
+        const id = req.params.id;
 
        const data = await dbGetCategory(id);
 

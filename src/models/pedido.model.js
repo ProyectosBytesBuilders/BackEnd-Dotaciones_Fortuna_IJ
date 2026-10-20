@@ -43,8 +43,16 @@ const PedidoSchema = new Schema({
     telefono_contacto: {
         type: String,
         trim: true
+    },
+
+    createdBy: {
+        type: Schema.Types.ObjectId,
+        ref: 'Pedido',
+        default: null
     }
-}, {
+}, 
+
+{
     timestamps: true
 });
 
